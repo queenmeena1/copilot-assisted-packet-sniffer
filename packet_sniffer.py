@@ -9,8 +9,7 @@ ALLOWED_INTERFACES = {"Wi-Fi", "Loopback Pseudo-Interface 1"}
 PACKET_COUNT = 25
 
 # Capture only TCP or UDP traffic.
-BPF_FILTER = "tcp port 8000"
-
+BPF_FILTER = "udp port 53"
 def redact_email(text):
     """Replace email addresses with a safe placeholder."""
     return re.sub(
@@ -126,9 +125,8 @@ def process_packet(packet):
         except Exception:
             pass
 
-
 def main():
-    interface = "Loopback Pseudo-Interface 1"
+    interface = "Wi-Fi"
 
     if interface not in ALLOWED_INTERFACES:
         raise ValueError(
@@ -150,7 +148,6 @@ def main():
         count=PACKET_COUNT,
         store=False
     )
-
 
 if __name__ == "__main__":
     main()

@@ -144,35 +144,28 @@ Several screenshots were collected during the development and testing process.
 
 
 
+## Screenshots and Evidence
+
+Several screenshots were collected during the development and testing process.
+
 The screenshots document:
 
+1. Git and Python installation and verification.
+2. Scapy installation.
+3. Successful packet capture.
+4. Identification of the Wi-Fi and loopback interfaces.
+5. Successful capture of 25 packets.
+6. Partial IP address masking.
+7. HTTP request decoding using a local HTTP server.
+8. DNS query decoding using UDP port 53.
+9. Unit tests passing.
+10. Git commits and pushes to the GitHub repository.
 
-
-1\. Git and Python installation and verification.
-
-2\. Scapy installation.
-
-3\. Successful packet capture.
-
-4\. Identification of the Wi-Fi and loopback interfaces.
-
-5\. Successful capture of 25 packets.
-
-6\. Partial IP address masking.
-
-7\. HTTP request decoding using a local HTTP server.
-
-8\. Unit tests passing.
-
-9\. Git commits and pushes to the GitHub repository.
-
-
-
-The most important testing screenshots show the final packet sniffer capturing 25 packets while displaying partially masked IP addresses. The output also shows the TCP filter and the message indicating that sensitive information will be redacted.
-
-
+The most important testing screenshots show the final packet sniffer capturing 25 packets while displaying partially masked IP addresses. The output also shows the packet filter and the message indicating that sensitive information will be redacted.
 
 Another screenshot shows the packet sniffer capturing authorized local HTTP traffic from a test server running on 127.0.0.1:8000. The sniffer successfully decoded the HTTP request line, including the GET request.
+
+A DNS testing screenshot shows the packet sniffer capturing UDP traffic on the Wi-Fi interface using the filter udp port 53. The sniffer successfully decoded DNS queries and displayed domain names while partially masking the IP addresses.
 
 \## Risks of Packet Sniffers
 
