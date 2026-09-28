@@ -70,3 +70,13 @@ Install Scapy with:
 
 python -m pip install scapy
 
+
+## Testing
+
+The project includes unit tests for the redaction functions.
+
+Run the tests with:
+
+```bash
+python -m unittest discover -s tests -v
+
