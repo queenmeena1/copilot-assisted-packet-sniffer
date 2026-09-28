@@ -154,21 +154,25 @@ The screenshots document:
 
 3\. Successful packet capture.
 
-4\. Identification of the Wi-Fi interface.
+4\. Identification of the Wi-Fi and loopback interfaces.
 
 5\. Successful capture of 25 packets.
 
 6\. Partial IP address masking.
 
-7\. Unit tests passing.
+7\. HTTP request decoding using a local HTTP server.
 
-8\. Git commits and pushes to the GitHub repository.
+8\. Unit tests passing.
 
-
-
-The most important testing screenshot shows the final packet sniffer capturing 25 packets while displaying partially masked IP addresses. The output also shows the TCP/UDP filter and the message indicating that sensitive information will be redacted.
+9\. Git commits and pushes to the GitHub repository.
 
 
+
+The most important testing screenshots show the final packet sniffer capturing 25 packets while displaying partially masked IP addresses. The output also shows the TCP filter and the message indicating that sensitive information will be redacted.
+
+
+
+Another screenshot shows the packet sniffer capturing authorized local HTTP traffic from a test server running on 127.0.0.1:8000. The sniffer successfully decoded the HTTP request line, including the GET request.
 
 \## Risks of Packet Sniffers
 

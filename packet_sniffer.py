@@ -4,14 +4,12 @@ import re
 
 
 # Only interfaces listed here may be used.
-ALLOWED_INTERFACES = {"Wi-Fi"}
-
+ALLOWED_INTERFACES = {"Wi-Fi", "Loopback Pseudo-Interface 1"}
 # Assignment requirement: capture 25 packets.
 PACKET_COUNT = 25
 
 # Capture only TCP or UDP traffic.
-BPF_FILTER = "tcp or udp"
-
+BPF_FILTER = "tcp port 8000"
 
 def redact_email(text):
     """Replace email addresses with a safe placeholder."""
@@ -130,7 +128,7 @@ def process_packet(packet):
 
 
 def main():
-    interface = "Wi-Fi"
+    interface = "Loopback Pseudo-Interface 1"
 
     if interface not in ALLOWED_INTERFACES:
         raise ValueError(
